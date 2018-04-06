@@ -11,7 +11,7 @@ package com.josereal.model;
  */
 public class Question {
     
-    //ANSWERS WILL BE SAVE IN DB WITH THE JOSN FORMAT!
+    //ANSWERS WILL BE SAVE IN DB WITH THE JSON FORMAT!
     
     private int idquestion;
     private String question;

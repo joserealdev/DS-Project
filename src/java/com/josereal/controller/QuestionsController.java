@@ -11,9 +11,6 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-import com.josereal.utilities.*;
-import org.apache.catalina.tribes.util.Arrays;
-
 public class QuestionsController {
 
     //Driver para poder establecer conexi�n para la bbdd
@@ -64,12 +61,12 @@ public class QuestionsController {
         while (rs.next()) {
 
             int idquestion = rs.getInt("idquestion");
-            String tquestion= rs.getString("question");
-            String answers=rs.getString("answers");
-            String image=rs.getString("image");
-            int nshowed=rs.getInt("nshowed");
-            int nsuccess=rs.getInt("nsuccess");
-            Question question=new Question(idquestion, tquestion, answers, image, nshowed, nsuccess);
+            String tquestion = rs.getString("question");
+            String answers = rs.getString("answers");
+            String image = rs.getString("image");
+            int nshowed = rs.getInt("nshowed");
+            int nsuccess = rs.getInt("nsuccess");
+            Question question = new Question(idquestion, tquestion, answers, image, nshowed, nsuccess);
             questions.add(question);
 
             question = null;
@@ -86,9 +83,9 @@ public class QuestionsController {
         String sql = "insert into questions values (?,?,?,?,?,?)";
         PreparedStatement preparedStatement = cn.prepareStatement(sql);
 
-        String newquestion=question.getQuestion();
-        String answers=question.getAnswers();
-        String image=question.getImage();
+        String newquestion = question.getQuestion();
+        String answers = question.getAnswers();
+        String image = question.getImage();
 
         preparedStatement.setInt(1, 0);
         preparedStatement.setString(2, newquestion);
@@ -115,8 +112,11 @@ public class QuestionsController {
         rs = null;
         preparedStatement = null;
 
-        if(borrados>0) return true;
-        else return false;
+        if (borrados > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean modifyQuestion(Question question) throws SQLException {
@@ -132,7 +132,10 @@ public class QuestionsController {
         preparedStatement.setInt(6, question.getIdquestion());
 
         int afectadas = preparedStatement.executeUpdate();
-        if(afectadas>0) return true;
-        else return false;
+        if (afectadas > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
