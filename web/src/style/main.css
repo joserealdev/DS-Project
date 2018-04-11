@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 body {
   background-color: white;
   margin: 0;
@@ -25,10 +29,11 @@ h1 {
 .main-menu li {
   list-style: none;
   text-align: center;
-  margin: 1%;
+  margin: 1% 20% 1% 20%;
   padding: 1%;
 }
 .main-menu .btn {
+  width: 100%;
   -webkit-border-radius: 5;
   -moz-border-radius: 5;
   border-radius: 5px;
@@ -43,4 +48,42 @@ h1 {
 .main-menu .btn:hover {
   background: rgb(230, 230, 230);
   text-decoration: none;
+}
+footer {
+  background-color: rgb(184, 184, 184);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.image {
+  text-align: center;
+}
+.image img {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 0px;
+}
+.question-container {
+  margin: 2%;
+  border-radius: 4px;
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+}
+.question {
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+}
+.answers {
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+}
+.answers-container {
+  text-align: center;
+  width: 100%;
+}
+.selec-container {
+  background-color: red;
+  margin-bottom: 0;
 }
