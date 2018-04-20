@@ -60,3 +60,16 @@
   background: #12ff36;
   text-decoration: none;
 }
+@media only screen and (max-width: 500px) {
+  #btns {
+    display: none !important;
+  }
+  #btnleft {
+    float: left;
+    width: 50%;
+  }
+  #btnright {
+    float: right;
+    width: 50%;
+  }
+}

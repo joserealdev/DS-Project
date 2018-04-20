@@ -18,42 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="src/owlcarousel/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            let html = '';
-            for (let x = 1; x < 31; x++) {
-                if (x < 10)
-                    html += '<button class="btn-selq">' + x + '</button>';
-                else if (x < 20)
-                    html += '<button style="width:55px!important" class="btn-selq">' + x + '</button>';
-                else
-                    html += '<button style="width:54px!important" class="btn-selq">' + x + '</button>';
-            }
-            document.getElementById("btns").innerHTML = html;
-            $(".owl-carousel").owlCarousel({
-                center: true,
-                loop: true,
-                rewind: true,
-                dots: false,
-                nav: false,
-                margin: 0,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 5,
-                        loop: false
-                    }
-                }
-            });
-
-        });
-    </script>
+    <script src="src/js/main.js"></script>
     <title>Test</title>
 </head>
 
@@ -86,13 +51,13 @@
         </div>
     </div>
     <div class="selec-container row">
-        <div class="col-lg-1">
+        <div class="col-lg-1 col-md-1 col-sm-1" id="btnleft">
             <button class="previous btn">Anterior</button>
         </div>
         <div id="btns" class="owl-carousel owl-theme col-lg-10">
 
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-1 col-md-1 col-sm-10" id="btnright">
             <button class="next btn">Siguiente</button>
         </div>
     </div>
