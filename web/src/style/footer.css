@@ -5,7 +5,7 @@
   text-align: center;
   z-index: 5001250;
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin-top: 0px;
   bottom: 0px;
   padding-bottom: 1%;
@@ -39,7 +39,6 @@
   height: 100%;
 }
 .owl-item {
-  width: 60px !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -60,16 +59,8 @@
   background: #12ff36;
   text-decoration: none;
 }
-@media only screen and (max-width: 500px) {
-  #btns {
-    display: none !important;
-  }
-  #btnleft {
-    float: left;
-    width: 50%;
-  }
-  #btnright {
-    float: right;
-    width: 50%;
+@media only screen and (max-width: 540px) {
+  .selec-container {
+    padding: 5%;
   }
 }
