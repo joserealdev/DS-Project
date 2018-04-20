@@ -20,9 +20,20 @@
     <script src="src/owlcarousel/owl.carousel.min.js"></script>
     <script>
         $(document).ready(function () {
+            let html = '';
+            for (let x = 1; x < 31; x++) {
+                if (x < 10)
+                    html += '<button class="btn-selq">' + x + '</button>';
+                else if (x < 20)
+                    html += '<button style="width:55px!important" class="btn-selq">' + x + '</button>';
+                else
+                    html += '<button style="width:54px!important" class="btn-selq">' + x + '</button>';
+            }
+            document.getElementById("btns").innerHTML = html;
             $(".owl-carousel").owlCarousel({
                 center: true,
-                loop: false,
+                loop: true,
+                rewind: true,
                 dots: false,
                 nav: false,
                 margin: 0,
@@ -40,6 +51,7 @@
                     }
                 }
             });
+
         });
     </script>
     <title>Test</title>
@@ -74,16 +86,15 @@
         </div>
     </div>
     <div class="selec-container row">
-        <button class="previous btn col-lg-1">Anterior</button>
-        <div class="owl-carousel owl-theme col-lg-10">
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
+        <div class="col-lg-1">
+            <button class="previous btn">Anterior</button>
         </div>
-        <button class="next btn col-lg-1">Siguiente</button>
+        <div id="btns" class="owl-carousel owl-theme col-lg-10">
+
+        </div>
+        <div class="col-lg-1">
+            <button class="next btn">Siguiente</button>
+        </div>
     </div>
 </body>
 
