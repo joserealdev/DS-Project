@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  let html = "";
-  for (let x = 1; x < 31; x++) {
+  let html = '<button class="btn-selq answered">1</button>';
+  for (let x = 2; x < 31; x++) {
     html += '<button class="btn-selq">' + x + "</button>";
   }
   document.getElementById("btns").innerHTML = html;
@@ -9,5 +9,8 @@ $(document).ready(function() {
     nav: false,
     autoWidth: true,
     margin: 5
+  });
+  $(".arrowbtn").click(function() {
+    console.log($(this).parent()[0].className);
   });
 });

@@ -162,10 +162,12 @@ body {
 }
 /*END RADIO*/
 .leftarrow {
-  display: inline-block;
+  float: left;
+  margin-left: 2%;
 }
 .rightarrow {
-  display: inline-block;
+  float: right;
+  margin-right: 2%;
 }
 .arrowbtn:hover {
 }

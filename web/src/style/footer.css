@@ -48,3 +48,31 @@ footer {
   bottom: 0px;
   padding-bottom: 1%;
 }
+.selected {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #2b9751;
+  padding: 0px 20px 0px 20px;
+  border: solid #5fa879 1px;
+  text-decoration: none;
+  text-align: center;
+}
+.selected:hover {
+  background: #247741;
+}
+.answered {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #30c765;
+  padding: 0px 20px 0px 20px;
+  border: solid #5fa879 1px;
+  text-decoration: none;
+  text-align: center;
+}
+.answered:hover {
+  background: #2ab159;
+}
