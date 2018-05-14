@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="src/favicon.ico">
-    <link rel="stylesheet" href="src/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="src/owlcarousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="src/style/main.css">
-    <link rel="stylesheet" href="src/style/header.css">
-    <link rel="stylesheet" href="src/style/footer.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="src/owlcarousel/owl.carousel.min.js"></script>
-    <script src="src/js/main.js"></script>
-    <title>Test</title>
-</head>
-
-<body>
-    <h1>DS project
-        <span class="user">Invitado</span>
-    </h1>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
     <div class="maincontent">
         <div class="leftarrow" id="btnleft">
             <a class="arrowbtn">
@@ -45,7 +18,7 @@
             <div class="question">
                 <p>
                     <span id="number">1.-</span>
-                    <span id="question">¿Qué alumbrado llevará encendido una motocicleta durante el día?</span>
+                    <span id="question">¿Qué alumbrado llevara encendido una motocicleta durante el día?</span>
                 </p>
             </div>
             <div class="answers-container">
@@ -74,11 +47,3 @@
             </div>
         </div>
     </div>
-    <div class="selec-container row">
-        <div id="btns" class="owl-carousel owl-theme col-xl-12 col-lg-12 col-md-12">
-
-        </div>
-    </div>
-</body>
-
-</html>

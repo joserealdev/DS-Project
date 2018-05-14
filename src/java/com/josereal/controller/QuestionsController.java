@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class QuestionsController {
 
@@ -17,8 +18,8 @@ public class QuestionsController {
     private final static String drv = "com.mysql.jdbc.Driver";
     //Cadena de conexi�n
     private final static String db = "jdbc:mysql://localhost:3306/proyecto";
-    private final static String user = "";
-    private final static String pass = "";
+    private final static String user = "proyecto";
+    private final static String pass = "proyecto";
 
     Connection cn; //Se importa la librer�a de java.sql
     PreparedStatement pst;
@@ -76,6 +77,67 @@ public class QuestionsController {
 
         return questions;
     }
+    
+    public Question getQuestion(int id) throws SQLException, ParseException {
+
+        PreparedStatement preparedStatement = cn.prepareStatement("SELECT * FROM questions WHERE idquestion =?");
+        preparedStatement.setInt(1, id);
+        //El objeto preparedStatement solo lee y lo hace en una direccion
+        rs = preparedStatement.executeQuery();
+        Question getQuestion=new Question();
+        while (rs.next()) {
+
+            int idquestion = rs.getInt("idquestion");
+            String tquestion = rs.getString("question");
+            String answers = rs.getString("answers");
+            String image = rs.getString("image");
+            int nshowed = rs.getInt("nshowed");
+            int nsuccess = rs.getInt("nsuccess");
+            getQuestion = new Question(idquestion, tquestion, answers, image, nshowed, nsuccess);
+        }
+        rs = null;
+        preparedStatement = null;
+
+        return getQuestion;
+    }
+    
+    public ArrayList<Question> getRandomTestBynumber(int numberofquestions) throws SQLException, ParseException {
+
+        PreparedStatement preparedStatement = cn.prepareStatement("SELECT * FROM questions");
+        //El objeto preparedStatement solo lee y lo hace en una direccion
+        rs = preparedStatement.executeQuery();
+        ArrayList<Question> getquestions=new ArrayList<>();
+        ArrayList<Question> randomQuestions=new ArrayList<>();
+        rs.last();
+        int tam=rs.getRow();
+        if(tam>0){
+            rs.beforeFirst();
+            while (rs.next()) {
+                int idquestion = rs.getInt("idquestion");
+                String tquestion = rs.getString("question");
+                String answers = rs.getString("answers");
+                String image = rs.getString("image");
+                int nshowed = rs.getInt("nshowed");
+                int nsuccess = rs.getInt("nsuccess");
+                Question question = new Question(idquestion, tquestion, answers, image, nshowed, nsuccess);
+                getquestions.add(question);
+
+                question = null;
+            }
+            //REORDER QUESTIONS
+            Collections.shuffle(getquestions);
+            if(tam<numberofquestions) numberofquestions=tam;
+            
+            for(int x=0;x<numberofquestions;x++){
+                randomQuestions.add(getquestions.get(x));
+            }
+        }
+        rs = null;
+        preparedStatement = null;
+
+        return randomQuestions;
+    }
+    
 
     public boolean addQuestion(Question question) throws SQLException {
 
