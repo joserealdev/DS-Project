@@ -4,7 +4,7 @@ preguntas.push("");
 let cont = 1;
 let cont2 = 2;
 let cont3 = 3;
-for (let x = 1; x <= 30; x++) {
+for (let x = 1; x <= 10; x++) {
   let pregunta = new Array();
   pregunta.push("Esta es la pregunta " + x);
   let question =
@@ -30,23 +30,24 @@ for (let x = 1; x <= 30; x++) {
   cont2 += 3;
   cont3 += 3;
 }
+
 function buildButtons(total) {
   let html = "";
   for (let x = 1; x < total.length; x++) {
     if (x != 1)
       html += '<button id="' + x + '" class="btn-selq">' + x + "</button>";
-    else html += '<button id="1" class="btn-selq answered">1</button>';
+    else html += '<button id="1" class="btn-selq selected">1</button>';
   }
   document.getElementById("btns").innerHTML = html;
 }
 
 function changeQuestion(btnQuestion) {
-  $(".answered").removeClass("answered");
+  $(".selected").removeClass("selected");
   let num = $(btnQuestion).attr("id");
   $("#number").html(num + ".-");
   $("#question").html(preguntas[num][0]);
   let json = JSON.parse(preguntas[num][1]);
-  $(btnQuestion).attr("class", "btn-selq answered");
+  $(btnQuestion).addClass("selected");
   let html = "";
   html += "<ul>";
   for (let x = 0; x < json.answers.length; x++) {
@@ -62,6 +63,9 @@ function changeQuestion(btnQuestion) {
   }
   html += "</ul>";
   $(".answers").html(html);
+  if (usersanswers[num] != undefined) {
+    $("input[value=" + usersanswers[num] + "]").attr("checked", true);
+  }
 }
 
 $(document).ready(function() {
@@ -73,7 +77,7 @@ $(document).ready(function() {
     margin: 5
   });
   $(".arrowbtn").click(function() {
-    let btn = $(".answered").attr("id");
+    let btn = $(".selected").attr("id");
     if ($(this).parent()[0].className == "rightarrow") btn++;
     else btn--;
 
@@ -105,6 +109,7 @@ $(document).ready(function() {
 
   $(document).on("click", "input[type=radio]", function(e) {
     usersanswers[$(this).attr("name")] = $(this).val();
+    $(".selected").addClass("answered");
   });
   //$("#loader").remove();
 });

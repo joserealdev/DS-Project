@@ -136,7 +136,7 @@ body {
 
 /* When the radio button is checked, add a blue background */
 .containerrb input:checked ~ .checkmark {
-  background-color: #30ff78;
+  background-color: #f9ae3b;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -164,11 +164,14 @@ body {
 .leftarrow {
   float: left;
   margin-left: 2%;
+  width: 30px;
+  height: 58px;
 }
 .rightarrow {
   float: right;
   margin-right: 2%;
   width: 30px;
+  height: 58px;
 }
 .arrowbtn:hover {
 }
@@ -176,6 +179,11 @@ body {
   width: 30px;
   position: absolute;
   top: 50%;
+  -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none; /* From IE10 only */
+  user-select: none;
+  -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
 }
 .rightarrow .arrowbtn img {
   float: right;
