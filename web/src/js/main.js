@@ -1,4 +1,5 @@
-var preguntas = new Array();
+let preguntas = new Array();
+let usersanswers = new Array();
 preguntas.push("");
 let cont = 1;
 let cont2 = 2;
@@ -40,18 +41,22 @@ function buildButtons(total) {
 }
 
 function changeQuestion(btnQuestion) {
-  $(".btn-selq").attr("class", "btn-selq");
-  let num = btnQuestion[0].innerHTML;
+  $(".answered").removeClass("answered");
+  let num = $(btnQuestion).attr("id");
+  $("#number").html(num + ".-");
   $("#question").html(preguntas[num][0]);
   let json = JSON.parse(preguntas[num][1]);
   $(btnQuestion).attr("class", "btn-selq answered");
-  console.log($(btnQuestion));
   let html = "";
   html += "<ul>";
   for (let x = 0; x < json.answers.length; x++) {
     html += '<li><label class="containerrb">';
     html +=
-      '<input type="radio" name="1" value="' + json.answers[x].idanswer + '">';
+      '<input type="radio" name="' +
+      json.idquestion +
+      '" value="' +
+      json.answers[x].idanswer +
+      '">';
     html += json.answers[x].answer;
     html += '<span class="checkmark"></span></label></li>';
   }
@@ -68,7 +73,6 @@ $(document).ready(function() {
     margin: 5
   });
   $(".arrowbtn").click(function() {
-    console.log($(this).parent()[0].className);
     let btn = $(".answered").attr("id");
     if ($(this).parent()[0].className == "rightarrow") btn++;
     else btn--;
@@ -80,13 +84,10 @@ $(document).ready(function() {
     if (btn == preguntas.length) {
       btn = 1;
     }
-    console.log(preguntas.length);
-
     changeQuestion($("button#" + btn));
   });
   $("#question").html(preguntas[1][0]);
   let json = JSON.parse(preguntas[1][1]);
-  console.log(json);
   let html = "";
   html += "<ul>";
   for (let x = 0; x < json.answers.length; x++) {
@@ -100,6 +101,10 @@ $(document).ready(function() {
   $(".answers").html(html);
   $(".btn-selq").click(function(e) {
     changeQuestion($(this));
+  });
+
+  $(document).on("click", "input[type=radio]", function(e) {
+    usersanswers[$(this).attr("name")] = $(this).val();
   });
   //$("#loader").remove();
 });

@@ -33,7 +33,11 @@
 }
 @media only screen and (max-width: 540px) {
   .selec-container {
-    padding: 5%;
+    padding: 5% 0 5%;
+  }
+  .owl-carousel {
+    padding-right: 1px;
+    padding-left: 1px;
   }
 }
 footer {
@@ -75,4 +79,7 @@ footer {
 }
 .answered:hover {
   background: #2ab159;
+}
+.btn-selq:focus {
+  outline: 0px;
 }

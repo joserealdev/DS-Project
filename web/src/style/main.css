@@ -168,6 +168,7 @@ body {
 .rightarrow {
   float: right;
   margin-right: 2%;
+  width: 30px;
 }
 .arrowbtn:hover {
 }
@@ -179,12 +180,19 @@ body {
 .rightarrow .arrowbtn img {
   float: right;
 }
+.drag-controls {
+  display: none;
+}
 @media only screen and (max-width: 540px) {
   .leftarrow {
     display: none;
   }
   .rightarrow {
     display: none;
+  }
+  .drag-controls {
+    display: block;
+    height: 200px;
   }
 }
 .maincontent {
