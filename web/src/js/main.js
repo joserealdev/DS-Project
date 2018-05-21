@@ -1,42 +1,13 @@
 let preguntas = new Array();
-let usersanswers = new Array();
 preguntas.push("");
-let cont = 1;
-let cont2 = 2;
-let cont3 = 3;
-for (let x = 1; x <= 10; x++) {
-  let pregunta = new Array();
-  pregunta.push("Esta es la pregunta " + x);
-  let question =
-    '{"idquestion":"' +
-    x +
-    '","answers":[{"idanswer":"' +
-    cont +
-    '","answer":"esto es una respuesta' +
-    cont +
-    '"},{"idanswer":"' +
-    cont2 +
-    '","answer":"esto es una respuesta' +
-    cont2 +
-    '"},{"idanswer":"' +
-    cont3 +
-    '","answer":"esto es una respuesta' +
-    cont3 +
-    '"}],"correct":"1"}';
-  pregunta.push(question);
-  pregunta.push("null");
-  preguntas.push(pregunta);
-  cont += 3;
-  cont2 += 3;
-  cont3 += 3;
-}
+let usersanswers = new Array();
 
 function buildButtons(total) {
   let html = "";
   for (let x = 1; x < total.length; x++) {
     if (x != 1)
       html += '<button id="' + x + '" class="btn-selq">' + x + "</button>";
-    else html += '<button id="1" class="btn-selq selected">1</button>';
+    else html += '<button id="' + x + '" class="btn-selq selected">1</button>';
   }
   document.getElementById("btns").innerHTML = html;
 }
@@ -45,8 +16,9 @@ function changeQuestion(btnQuestion) {
   $(".selected").removeClass("selected");
   let num = $(btnQuestion).attr("id");
   $("#number").html(num + ".-");
-  $("#question").html(preguntas[num][0]);
-  let json = JSON.parse(preguntas[num][1]);
+  $("#question").html(preguntas[num][1]);
+  let idquestion=preguntas[num][0];
+  let json = JSON.parse(preguntas[num][2]);
   $(btnQuestion).addClass("selected");
   let html = "";
   html += "<ul>";
@@ -54,7 +26,7 @@ function changeQuestion(btnQuestion) {
     html += '<li><label class="containerrb">';
     html +=
       '<input type="radio" name="' +
-      json.idquestion +
+      idquestion +
       '" value="' +
       json.answers[x].idanswer +
       '">';
@@ -63,8 +35,8 @@ function changeQuestion(btnQuestion) {
   }
   html += "</ul>";
   $(".answers").html(html);
-  if (usersanswers[num] != undefined) {
-    $("input[value=" + usersanswers[num] + "]").attr("checked", true);
+  if (usersanswers[idquestion] != undefined) {
+    $("input[value=" + usersanswers[idquestion] + "]").attr("checked", true);
   }
 }
 
@@ -90,14 +62,14 @@ $(document).ready(function() {
     }
     changeQuestion($("button#" + btn));
   });
-  $("#question").html(preguntas[1][0]);
-  let json = JSON.parse(preguntas[1][1]);
+  $("#question").html(preguntas[1][1]);
+  let json = JSON.parse(preguntas[1][2]);
   let html = "";
   html += "<ul>";
   for (let x = 0; x < json.answers.length; x++) {
     html += '<li><label class="containerrb">';
     html +=
-      '<input type="radio" name="1" value="' + json.answers[x].idanswer + '">';
+      '<input type="radio" name="'+preguntas[1][0]+'" value="' + json.answers[x].idanswer + '">';
     html += json.answers[x].answer;
     html += '<span class="checkmark"></span></label></li>';
   }
@@ -111,5 +83,5 @@ $(document).ready(function() {
     usersanswers[$(this).attr("name")] = $(this).val();
     $(".selected").addClass("answered");
   });
-  //$("#loader").remove();
+  $("#loader").remove();
 });

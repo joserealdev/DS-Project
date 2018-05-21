@@ -10,10 +10,11 @@
         out.println("let pregunta=new Array();");
         for(int x=0;x<preguntas.size();x++){
             Question sacar=(Question) preguntas.get(x);
+            out.println("pregunta.push('"+sacar.getIdquestion()+"')");
             out.println("pregunta.push('"+sacar.getQuestion()+"')");
             out.println("pregunta.push("+sacar.getAnswers()+")");
             out.println("pregunta.push('"+sacar.getImage()+"')");
             out.println("preguntas.push(pregunta);");
-            out.println("let pregunta=null;");
+            out.println("pregunta=new Array();");
         }
     %>

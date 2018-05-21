@@ -1,6 +1,6 @@
-<!--%@page import="com.josereal.model.Question"%>
+<%@page import="com.josereal.model.Question"%>
     <%@page import="java.util.ArrayList"%>
-        <%@page import="com.josereal.controller.QuestionsController"%-->
+        <%@page import="com.josereal.controller.QuestionsController"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,14 +45,14 @@
             </a>
         </div>
         <div class="image">
-            <img src="https://cuantogana.xyz/wp-content/uploads/cuanto-gana-un-profesor-de-autoescuela.jpg" class="img-responsive center-block"
+            <img src="src/uploaded/images/default.jpg" class="img-responsive center-block"
                 alt="">
         </div>
         <div class="question-container">
             <div class="question">
                 <p>
-                    <span id="number">1.-</span>
-                    <span id="question">�Qu� alumbrado llevara encendido una motocicleta durante el d�a?</span>
+                    <span id="number"></span>
+                    <span id="question">Loading...</span>
                 </p>
             </div>
             <div class="answers-container">
@@ -60,19 +60,19 @@
                     <ul>
                         <li>
                             <label class="containerrb">
-                                <input type="radio" name="1" value="1"> El de corto alcance o cruce.
+                                <input type="radio" name="1" value="1"> Ejemplo 1
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
                             <label class="containerrb">
-                                <input type="radio" name="1" value="2"> El de posici�n o el de corto alcance.
+                                <input type="radio" name="1" value="2"> Ejemplo 2.
                                 <span class="checkmark"></span>
                             </label>
                         </li>
                         <li>
                             <label class="containerrb">
-                                <input type="radio" name="1" value="3"> Ninguno
+                                <input type="radio" name="1" value="3"> Ejemplo 3.
                                 <span class="checkmark"></span>
                             </label>
                         </li>
