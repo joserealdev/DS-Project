@@ -5,7 +5,9 @@ $(document).ready(function() {
   document
     .getElementsByClassName("drag-controls")[0]
     .addEventListener("touchmove", handleTouchMove, false);
-    document.addEventListener('keyup',function(){ArrowsController(event);});
+  document.addEventListener("keyup", function() {
+    ArrowsController(event);
+  });
   var xDown = null;
   var yDown = null;
 
@@ -43,20 +45,20 @@ $(document).ready(function() {
     xDown = null;
     yDown = null;
   }
-
 });
-  function ArrowsController(e){
-      var keyCode = (e.keyCode ? e.keyCode : e.which);
-      
-      if(keyCode==37){
-          $(".leftarrow")
-          .children(".arrowbtn")
-          .click();
-      }
-      
-      if(keyCode==39){
-          $(".rightarrow")
-          .children(".arrowbtn")
-          .click();
-      }
+function ArrowsController(e) {
+  //FIX THIS
+  var keyCode = e.keyCode ? e.keyCode : e.which;
+
+  if (keyCode == 37) {
+    $(".leftarrow")
+      .children(".arrowbtn")
+      .click();
   }
+
+  if (keyCode == 39) {
+    $(".rightarrow")
+      .children(".arrowbtn")
+      .click();
+  }
+}

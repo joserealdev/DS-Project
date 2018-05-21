@@ -23,3 +23,19 @@ h1 {
     padding: 4%;
   }
 }
+.btn-corr {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: white;
+  /* background: #59ff93; */
+  background: #001669;
+  padding: 5px 20px 5px 20px;
+  border: solid #30ff78 1px;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-corr:hover {
+  background: #12ff36;
+  text-decoration: none;
+}

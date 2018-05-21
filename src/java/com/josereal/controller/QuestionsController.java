@@ -17,9 +17,9 @@ public class QuestionsController {
     //Driver para poder establecer conexi�n para la bbdd
     private final static String drv = "com.mysql.jdbc.Driver";
     //Cadena de conexi�n
-    private final static String db = "jdbc:mysql://localhost:3306/proyecto";
-    private final static String user = "proyecto";
-    private final static String pass = "proyecto";
+    private final static String db = "jdbc:mysql://localhost:3306/DB";
+    private final static String user = "user";
+    private final static String pass = "pass";
 
     Connection cn; //Se importa la librer�a de java.sql
     PreparedStatement pst;
