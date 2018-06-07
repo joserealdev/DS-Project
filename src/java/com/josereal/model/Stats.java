@@ -15,16 +15,18 @@ public class Stats {
     private int answered;
     private int success;
     private int wrong;
+    private int showedquestions;
 
     public Stats() {
     }
 
-    public Stats(int idUser, int completeTests, int answered, int success, int wrong) {
+    public Stats(int idUser, int completeTests, int answered, int success, int wrong, int showedquestions) {
         this.idUser = idUser;
         this.completeTests = completeTests;
         this.answered = answered;
         this.success = success;
         this.wrong = wrong;
+        this.showedquestions = showedquestions;
     }
 
     public int getIdUser() {
@@ -46,6 +48,10 @@ public class Stats {
     public int getWrong() {
         return wrong;
     }
+    
+    public int getShowedquestions(){
+        return showedquestions;
+    }
 
     public void setIdUser(int idUser) {
         this.idUser = idUser;
@@ -65,6 +71,10 @@ public class Stats {
 
     public void setWrong(int wrong) {
         this.wrong = wrong;
+    }
+    
+    public void setShowedquestions(int showedquestions){
+        this.showedquestions = showedquestions;
     }
 
     @Override

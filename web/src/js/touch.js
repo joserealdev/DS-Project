@@ -6,7 +6,7 @@ $(document).ready(function() {
     .getElementsByClassName("drag-controls")[0]
     .addEventListener("touchmove", handleTouchMove, false);
   document.addEventListener("keyup", function() {
-    ArrowsController(event);
+    //ArrowsController(event);
   });
   var xDown = null;
   var yDown = null;

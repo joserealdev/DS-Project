@@ -13,10 +13,10 @@ body {
   list-style: none !important;
 }
 .main-menu li {
-  list-style: none !important;
+  /*list-style: none !important;
   text-align: center;
   margin: 1% 20% 1% 20%;
-  padding: 1%;
+  padding: 1%;*/
 }
 .answers ul {
   list-style: none;
@@ -77,6 +77,7 @@ body {
   border-radius: 4px;
   background-color: rgb(248, 248, 248);
   text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .question {
   background-color: rgb(245, 245, 245);
@@ -138,6 +139,36 @@ body {
 .containerrb input:checked ~ .checkmark {
   background-color: #f9ae3b;
 }
+
+.containerrb input:checked ~ .correct {
+  background-color: #00ff2a;
+}
+.containerrb input:checked ~ .correctcorrect {
+  background-color: #00ff2a;
+  border: 3px solid black;
+}
+.containerrb .checkmark.correctcorrect:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.containerrb input:checked ~ .incorrect {
+  background-color: #ff0000;
+  border: 3px solid black;
+}
+.containerrb .checkmark.incorrect:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
@@ -204,4 +235,11 @@ body {
   }
 }
 .maincontent {
+}
+table{
+    display: flex;
+    justify-content: center;
+}
+.modal-footer{
+    justify-content: center!important;
 }

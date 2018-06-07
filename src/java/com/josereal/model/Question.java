@@ -19,25 +19,28 @@ public class Question {
     private String image;
     private int nshowed;
     private int nsuccess;
+    private int nfail;
 
     public Question() {
     }
 
-    public Question(int idquestion, String question, String answers, String image, int nshowed, int nsuccess) {
+    public Question(int idquestion, String question, String answers, String image, int nshowed, int nsuccess, int nfail) {
         this.idquestion = idquestion;
         this.question = question;
         this.answers = answers;
         this.image = image;
         this.nshowed = nshowed;
         this.nsuccess = nsuccess;
+        this.nfail = nfail;
     }
 
-    public Question(String question, String answers, String image, int nshowed, int nsuccess) {
+    public Question(String question, String answers, String image, int nshowed, int nsuccess, int fail) {
         this.question = question;
         this.answers = answers;
         this.image = image;
         this.nshowed = nshowed;
         this.nsuccess = nsuccess;
+        this.nfail = nfail;
     }
 
     public int getIdquestion() {
@@ -63,6 +66,10 @@ public class Question {
     public int getNsuccess() {
         return nsuccess;
     }
+    
+    public int getNfail() {
+        return nfail;
+    }
 
     public void setIdquestion(int idquestion) {
         this.idquestion = idquestion;
@@ -86,6 +93,10 @@ public class Question {
 
     public void setNsuccess(int nsuccess) {
         this.nsuccess = nsuccess;
+    }
+    
+    public void setNfail(int nfail) {
+        this.nfail = nfail;
     }
 
     @Override

@@ -4,7 +4,7 @@
   /* background-color: rgb(197, 255, 191); */
   background-color: #212e5e;
   text-align: center;
-  z-index: 5001250;
+  z-index: 10;
   width: 100%;
   position: fixed;
   margin-top: 0px;
@@ -90,4 +90,14 @@ footer {
 }
 .btn-selq:focus {
   outline: 0px;
+}
+.correct{
+  background: #00ff59;
+}
+.fail{
+  background: #da1e1e;
+}
+.blank{
+  background: #ffffff;
+  color: black
 }

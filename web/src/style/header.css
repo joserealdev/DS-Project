@@ -1,4 +1,4 @@
-h1 {
+.header {
   /* background-color: rgb(197, 255, 191); */
   background-color: #212e5e;
   color: white;
@@ -14,12 +14,29 @@ h1 {
 }
 .user {
   float: right;
-  margin-right: 3%;
-  margin-top: 5px;
   font-size: 0.6em;
+  margin-right: 3%;
+}
+.user a{
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: white;
+  /* background: #59ff93; */
+  background: #001669;
+  padding: 5px 20px 5px 20px;
+  border: solid #30ff78 1px;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 3%;
+}
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
 }
 @media only screen and (max-width: 500px) {
-  h1 {
+  .header {
     padding: 4%;
   }
 }
@@ -34,6 +51,8 @@ h1 {
   border: solid #30ff78 1px;
   text-decoration: none;
   text-align: center;
+  margin-right: 3%;
+  margin-top: 5px;
 }
 .btn-corr:hover {
   background: #12ff36;
